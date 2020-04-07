@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script src="jquery.js"></script>
+        <script src="easytimer.js"></script>
+        <script src=script.js></script>
+        <title>Time Conversion</title>
+    </head>
+
+    <body>
+        <audio id="timerStopAudio">
+            <source src="horse.wav" type="audio/wav">
+            Your browser does not support the audio element.
+          </audio>
+        <h1>X-Plane 11 Ground Speed Calculator</h1>
+        <table>
+            <tr>
+                <td>Hour</td>
+                <td><input id="hourInp" maxlength="2" type="text" /></td>
+            </tr>
+            <tr>
+                <td>Minute</td>
+                <td><input id="minInp" maxlength="2" type="text" /></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>Compression</td>
+                <!-- <td><input id="compInp" maxlength="2" type="text" /></td> -->
+                <td><input type="radio" name="compressionRadio" value="2"  checked/>2x</td>
+                <td><input type="radio" name="compressionRadio" value="4" />4x</td>
+                <td><input type="radio" name="compressionRadio" value="8" />8x</td>
+                <td><input type="radio" name="compressionRadio" value="16" />16x</td>
+            </tr>
+            <tr>
+                <td>Want Timer?</td>
+                <td><input type="checkbox" id="wantTimerId2" /></td>
+            </tr>
+        </table>
+        <button id="realTimeBtn" >Real Time ETA</button>
+        <h2 id="realTimeH2"></h2>
+    </body>
+</html>
