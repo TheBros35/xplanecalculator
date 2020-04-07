@@ -13,6 +13,14 @@
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.slim.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JavaScript -->
+  <script src="script.js"></script>
+  <script src="easytimer.js"></script>
+
 </head>
 
 <body>
@@ -30,16 +38,6 @@
             <a class="nav-link" href="#">Home
               <span class="sr-only">(current)</span>
             </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
         </ul>
       </div>
     </div>
@@ -60,15 +58,19 @@
           <input id="minInp" maxlength="2" type="text" />
         </div>
         <div class="form-group">
-          <label for="minute">Compression</label>
+          <!-- <label for="compression">Compression</label> -->
           <div class="dropdown dropright">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Compression</button>
+            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Compression</button>
             <div class="dropdown-menu">
-              <div class="dropdown-item" href="#">2x</div>
-              <div class="dropdown-item" href="#">4x</div>
+              <div class="dropdown-item" href="#" id="dropdown2x">2x</div>
+              <div class="dropdown-item" href="#" id="dropdown4x">4x</div>
+              <div class="dropdown-item" href="#" id="dropdown8x">8x</div>
+              <div class="dropdown-item" href="#" id="dropdown16x">16x</div>
             </div>
           </div>
         </div>
+        <button type="submit" id="realTimeBtn" class="btn btn-primary">Submit</button>
+        <h2 id="realTimeH2"></h2>
         <ul class="list-unstyled">
           <li>Bootstrap 4.3.1</li>
           <li>jQuery 3.4.1</li>
@@ -77,9 +79,7 @@
     </div>
   </div>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.slim.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  
 
 </body>
 

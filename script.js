@@ -26,13 +26,26 @@ function RealTimeETA(){
 */
 
 $(document).ready(function(){
+    $("#dropdown2x").click(function(){
+        sessionStorage.setItem("compression","2");
+    });
+    $("#dropdown4x").click(function(){
+        sessionStorage.setItem("compression","4");
+    });
+    $("#dropdown8x").click(function(){
+        sessionStorage.setItem("compression","8");
+    });
+    $("#dropdown16x").click(function(){
+        sessionStorage.setItem("compression","16");
+    });
     $("#realTimeBtn").click(function(){
         var hour = $("#hourInp").val();
         hour = Number(hour);
         var minutes = $("#minInp").val();
         minutes = Number(minutes);
-        var compression = $("input[name='compressionRadio']:checked").val();
-        console.log(compression);
+        var compression = sessionStorage.getItem("compression");
+        compression = Number(compression);
+        console.log(hour + "" + minutes + "" + "" + compression);
 
         //converts hours to minutes, adds them together
         var allMinutes = (hour * 60) + minutes;
@@ -43,7 +56,8 @@ $(document).ready(function(){
         var convertedMinutes = allMinutes % 60;
         //converts the minutes to hours
         var convertedHours = Math.floor(allMinutes / 60);
-
+        
+        /* 
         //reloads the page if checkbox is changed due to shit timer code
         $('#wantTimerId2').on('change', function() {
             location.reload();
@@ -52,6 +66,7 @@ $(document).ready(function(){
         if (document.getElementById("wantTimerId2").checked){
             RealTimer(convertedHours,convertedMinutes);
         }
+         */
         
         //displays the final result on the page
         convertedMinutes = Math.ceil(convertedMinutes);
