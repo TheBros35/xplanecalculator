@@ -38,6 +38,10 @@
             <a class="nav-link" href="#">Home
               <span class="sr-only">(current)</span>
             </a>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">About
+              <span class="sr-only">(current)</span>
+            </a>
         </ul>
       </div>
     </div>
@@ -50,15 +54,28 @@
         <h1 class="mt-5">X-Plane Ground Speed Calculator</h1>
         <p class="lead">Enter in ETA of the flight plan, and expected compression.</p>
         <!-- Start of input forms -->
-        <div class="container">
-          <div class="form-group">
-            <label for="hour">Hour</label>
-            <input id="hourInp" maxlength="2" type="text" />
-          </div>
-          <div class="form-group">
-            <label for="minute">Minute</label>
-            <input id="minInp" maxlength="2" type="text" />
-          </div>
+        
+          
+        
+        <!-- End of input forms -->
+        <button type="submit" id="realTimeBtn" class="btn btn-primary">Submit</button>
+        <h2 id="realTimeH2"></h2>
+
+        <table class="table">
+          <tr>
+            <div class="form-group">
+              <label for="hour">Hour</label>
+              <input id="hourInp" maxlength="2" type="text" />
+            </div>
+          </tr>
+          <tr>
+            <td>
+            <div class="form-group">
+              <label for="minute">Minute</label>
+              <input id="minInp" maxlength="2" type="text" />
+            </div>
+            </td>
+          </tr>
           <div class="form-group">
             <div class="dropdown dropright">
               <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Compression</button>
@@ -70,10 +87,9 @@
               </div>
             </div>
           </div>
-        </div>
-        <!-- End of input forms -->
-        <button type="submit" id="realTimeBtn" class="btn btn-primary">Submit</button>
-        <h2 id="realTimeH2"></h2>
+        </table>
+
+        <!-- Contributions and Licensing -->
         <ul class="list-unstyled">
           <li>Bootstrap 4.3.1</li>
           <li>jQuery 3.4.1</li>
