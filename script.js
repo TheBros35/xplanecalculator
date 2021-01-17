@@ -18,7 +18,7 @@ $(document).ready(function(){
         minutes = Number(minutes);
         let compression = sessionStorage.getItem("compression");
         compression = Number(compression);
-        console.log(hour + "" + minutes + "" + "" + compression);
+        console.log(hour + " " + minutes + " " + compression);
 
         //converts hours to minutes, adds them together
         let allMinutes = (hour * 60) + minutes;
