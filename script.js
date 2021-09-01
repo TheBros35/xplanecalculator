@@ -51,6 +51,5 @@ function calcRealTime(){
 
     //displays the final result on the page
     const final = convertedHours + ' hours ' + convertedMinutes + ' minutes';
-    console.log(final);
-
+    document.getElementById('realTimeH2').value = final;
 }
