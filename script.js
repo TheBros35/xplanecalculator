@@ -19,6 +19,11 @@ function calcRealTime(){
     const convertedHours = Math.floor(allMinutes / 60);
 
     //displays the final result on the page
-    const final = convertedHours + ' hours ' + convertedMinutes + ' minutes';
+    let hourOrHours = "hour";
+    if(convertedHours>1){hourOrHours="hours";};
+    let minuteOrMinute = "minute";
+    if(convertedMinutes>1){minuteOrMinute = "minutes";};
+
+    const final = `${convertedHours} ${hourOrHours} and ${convertedMinutes} ${minuteOrMinute}`;
     document.getElementById('realTimeH2').innerHTML = final;
 }
