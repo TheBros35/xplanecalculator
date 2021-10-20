@@ -6,9 +6,12 @@ function dropdown8x() {sessionStorage.setItem('compression','8');}
 
 function dropdown16x() {sessionStorage.setItem('compression','16');}
 
+function dropdownCustom() {document.getElementById('customRateInp').innerHTML = "yolo";}
+
 function calcRealTime(){
     const hour = Number(document.getElementById('hourInp').value);
     const minutes = Number(document.getElementById('minInp').value);
+    if (minutes >= 60){alert("Make sure minutes is less than 60.");};
     const compression = Number(sessionStorage.getItem('compression'));
 
     //converts hours to minutes, adds them together, then divides that by the compression factor
