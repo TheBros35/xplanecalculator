@@ -1,47 +1,91 @@
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <script src="jquery.js"></script>
-        <script src="easytimer.js"></script>
-        <script src=script.js></script>
-        <title>Time Conversion</title>
-    </head>
+<!DOCTYPE html>
+<html lang="en">
 
-    <body>
-        <audio id="timerStopAudio">
-            <source src="horse.wav" type="audio/wav">
-            Your browser does not support the audio element.
-          </audio>
-        <h1>X-Plane 11 Ground Speed Calculator</h1>
-        <table>
-            <tr>
-                <td>Hour</td>
-                <td><input id="hourInp" maxlength="2" type="text" /></td>
-            </tr>
-            <tr>
-                <td>Minute</td>
-                <td><input id="minInp" maxlength="2" type="text" /></td>
-            </tr>
-        </table>
-        <table>
-            <tr>
-                <td>Compression</td>
-                <!-- <td><input id="compInp" maxlength="2" type="text" /></td> -->
-                <td><input type="radio" name="compressionRadio" value="2"  checked/>2x</td>
-                <td><input type="radio" name="compressionRadio" value="4" />4x</td>
-                <td><input type="radio" name="compressionRadio" value="8" />8x</td>
-                <td><input type="radio" name="compressionRadio" value="16" />16x</td>
-            </tr>
-            <tr>
-                <td>Want Timer?</td>
-                <td><input type="checkbox" id="wantTimerId2" /></td>
-            </tr>
-        </table>
-        <button id="realTimeBtn" >Real Time ETA</button>
-        <h2 id="realTimeH2"></h2>
-        <p id="demo"></p>
-        <div id="countdownExample">
-            <div class="values"></div>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>X-Plane Calculator</title>
+
+  <!-- Bootstrap files -->
+  <link href="vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JavaScript -->
+  <script src="script.js"></script>
+
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">X-Plane Ground Speed Calculator</a>
+    </div>
+  </nav>
+
+  <!-- Main Page Container -->
+  <div class="container">
+    <div class="row mt-5 mb-3">
+      <div class="col text-center">
+        <h1 class="h1">X-Plane Ground Speed Calculator</h1>
+        <p class="lead">Enter in ETA of the flight plan, and expected compression.</p>
+        
+      </div>
+    </div>
+
+    <div class="form-group row text-center my-2">
+      <label for="hourInp" class="col col-form-label">Hour</label>
+      <div class="col">
+        <input id="hourInp" maxlength="2" type="text" style="text-align: center" class="form-control" />
+      </div>
+    </div>
+
+    <div class="form-group row text-center">
+      <label for="minInp" class="col col-form-label">Minute</label>
+      <div class="col">
+        <input id="minInp" maxlength="2" type="text" style="text-align: center" class="form-control"/>
+      </div>
+    </div>
+
+    <br />
+
+    <div class="form-group row">
+      <div class="col text-center">
+        <div class="btn-group dropdown">
+          <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown">Compression</button>
+          <ul class="dropdown-menu">
+            <li class="dropdown-item" id="dropdown2x" onclick="dropdown2x()">2x</li>
+            <li class="dropdown-item" id="dropdown4x" onclick="dropdown4x()">4x</li>
+            <li class="dropdown-item" id="dropdown8x" onclick="dropdown8x()">8x</li>
+            <li class="dropdown-item" id="dropdown16x" onclick="dropdown16x()">16x</li>
+          </ul>
         </div>
-    </body>
+        <button type="submit" id="realTimeBtn" class="btn btn-primary" onclick="calcRealTime()">Submit</button>
+        <h2 id="realTimeH2" class="h2 my-3"></h2>
+      </div>
+    </div>
+
+    <br />
+  </div>
+
+  <hr>
+  <!-- Thank me later container -->
+  <div class="container text-center">
+    <ul class="list-unstyled">
+      <li>Bootstrap 5</li>
+      <li><h1>🥵</h1></li>
+      <li><a href="https://github.com/TheBros35/xplanecalculator/tree/bootstrap-dev">Github</a></li>
+    </ul>
+  </div>
+ 
+
+  
+
+</body>
+
 </html>
