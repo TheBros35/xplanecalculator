@@ -38,37 +38,48 @@
       </div>
     </div>
 
-    <div class="form-group row text-center my-2">
-      <label for="hourInp" class="col col-form-label">Hour</label>
-      <div class="col">
-        <input id="hourInp" maxlength="2" type="text" style="text-align: center" class="form-control" />
-      </div>
-    </div>
+    <form>
 
-    <div class="form-group row text-center">
-      <label for="minInp" class="col col-form-label">Minute</label>
-      <div class="col">
-        <input id="minInp" maxlength="2" type="text" style="text-align: center" class="form-control"/>
-      </div>
-    </div>
-
-    <br />
-
-    <div class="form-group row">
-      <div class="col text-center">
-        <div class="btn-group dropdown">
-          <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown">Compression</button>
-          <ul class="dropdown-menu">
-            <li class="dropdown-item" id="dropdown2x" onclick="dropdown2x()">2x</li>
-            <li class="dropdown-item" id="dropdown4x" onclick="dropdown4x()">4x</li>
-            <li class="dropdown-item" id="dropdown8x" onclick="dropdown8x()">8x</li>
-            <li class="dropdown-item" id="dropdown16x" onclick="dropdown16x()">16x</li>
-          </ul>
+      <div class="row text-center my-2">
+        <div class="col-2 offset-4">
+          <label for="hourInp" class="col col-form-label">Hour</label>
         </div>
-        <button type="submit" id="realTimeBtn" class="btn btn-primary" onclick="calcRealTime()">Submit</button>
-        <h2 id="realTimeH2" class="h2 my-3"></h2>
+        <div class="col-2">
+          <input id="hourInp" maxlength="2" type="number" style="text-align: center" class="form-control" />
+        </div>
       </div>
-    </div>
+
+      <div class="row text-center">
+        <div class="col-2 offset-4">
+          <label for="minInp" class="col-form-label">Minute</label>
+        </div>
+        <div class="col-2">
+          <input id="minInp" maxlength="2" type="number" style="text-align: center" class="form-control"/>
+        </div>
+      </div>
+
+      <br />
+
+      <div class="row text-center">
+        <div class="col">
+          <div class="btn-group dropend">
+            <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown">Compression</button>
+            <ul class="dropdown-menu">
+              <li class="dropdown-item" id="dropdown2x" onclick="dropdown2x()">2x</li>
+              <li class="dropdown-item" id="dropdown4x" onclick="dropdown4x()">4x</li>
+              <li class="dropdown-item" id="dropdown8x" onclick="dropdown8x()">8x</li>
+              <li class="dropdown-item" id="dropdown16x" onclick="dropdown16x()">16x</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row text-center mt-3">
+        <div class="col">
+          <button type="button" id="realTimeBtn" class="btn btn-primary" onclick="calcRealTime()">Submit</button>
+          <h2 id="realTimeH2" class="h2 my-3"></h2>
+        </div>
+      </div>
+    </form>
 
     <br />
   </div>
