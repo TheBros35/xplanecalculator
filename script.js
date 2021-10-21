@@ -4,9 +4,14 @@ function setSimRate(simRate){
 
 function showCustomSimRate(){
     const customSimRateLabel = `<label for="customSimRateInp" class="col-form-label">Sim Rate:</label>`;
-    const customSimRateInput = `<input id="customSimRateInp" maxlength="2" type="number" style="text-align: center" class="form-control"/>`;
+    const customSimRateInput = `<input id="customSimRateInp" type="number" step="0.01" style="text-align: center" class="form-control"/>`;
     document.getElementById('customSimRateLabelDiv').innerHTML = customSimRateLabel;
     document.getElementById('customSimRateInpDiv').innerHTML = customSimRateInput;
+
+    document.getElementById('customSimRateInp').addEventListener('input', () => {
+        let simRate = document.getElementById('customSimRateInp').value;
+        sessionStorage.setItem('compression', simRate);
+    });
 }
 
 function calcRealTime() {
@@ -17,7 +22,7 @@ function calcRealTime() {
         showMinuteAlert();
         return;
     }
-    ;
+
     const compression = Number(sessionStorage.getItem('compression'));
 
     //converts hours to minutes, adds them together, then divides that by the compression factor
