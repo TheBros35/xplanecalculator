@@ -1,14 +1,28 @@
-function dropdown2x() {sessionStorage.setItem('compression','2');}
+function setSimRate(simRate){
+    sessionStorage.setItem('compression', simRate);
+}
 
-function dropdown4x() {sessionStorage.setItem('compression','4');}
+function showCustomSimRate(){
+    const customSimRateLabel = `<label for="customSimRateInp" class="col-form-label">Sim Rate:</label>`;
+    const customSimRateInput = `<input id="customSimRateInp" type="number" step="0.01" style="text-align: center" class="form-control"/>`;
+    document.getElementById('customSimRateLabelDiv').innerHTML = customSimRateLabel;
+    document.getElementById('customSimRateInpDiv').innerHTML = customSimRateInput;
 
-function dropdown8x() {sessionStorage.setItem('compression','8');}
+    document.getElementById('customSimRateInp').addEventListener('input', () => {
+        let simRate = document.getElementById('customSimRateInp').value;
+        sessionStorage.setItem('compression', simRate);
+    });
+}
 
-function dropdown16x() {sessionStorage.setItem('compression','16');}
-
-function calcRealTime(){
+function calcRealTime() {
     const hour = Number(document.getElementById('hourInp').value);
     const minutes = Number(document.getElementById('minInp').value);
+    //cheesy error handling if user enters wrong number of minutes
+    if (minutes >= 60) {
+        showMinuteAlert();
+        return;
+    }
+
     const compression = Number(sessionStorage.getItem('compression'));
 
     //converts hours to minutes, adds them together, then divides that by the compression factor
@@ -19,6 +33,23 @@ function calcRealTime(){
     const convertedHours = Math.floor(allMinutes / 60);
 
     //displays the final result on the page
-    const final = convertedHours + ' hours ' + convertedMinutes + ' minutes';
-    document.getElementById('realTimeH2').innerHTML = final;
+    let hourOrHours = "hours";
+    if (convertedHours === 1) {
+        hourOrHours = "hour";
+    }
+    ;
+    let minuteOrMinute = "minutes";
+    if (convertedMinutes === 1) {
+        minuteOrMinute = "minute";
+    }
+    ;
+
+    const final = `${convertedHours} ${hourOrHours} and ${convertedMinutes} ${minuteOrMinute}`;
+    document.getElementById('realTimeResults').innerHTML = final;
+}
+
+function showMinuteAlert() {
+    var wrapper = document.createElement('div')
+    wrapper.innerHTML = '<div class="alert alert-danger alert-dismissible show fade" role="alert">More than 60 in minutes field<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+    document.getElementById('realTimeResults').append(wrapper);
 }

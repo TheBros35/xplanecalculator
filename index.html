@@ -24,7 +24,7 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-      <a class="navbar-brand" href="#">X-Plane Ground Speed Calculator</a>
+      <a class="navbar-brand" href="#">Sim Rate Calculator</a>
     </div>
   </nav>
 
@@ -32,9 +32,9 @@
   <div class="container">
     <div class="row mt-5 mb-3">
       <div class="col text-center">
-        <h1 class="h1">X-Plane Ground Speed Calculator</h1>
+        <h1 class="h1">Sim Rate Calculator</h1>
         <p class="lead">Enter in ETA of the flight plan, and expected compression.</p>
-        
+
       </div>
     </div>
 
@@ -58,6 +58,14 @@
         </div>
       </div>
 
+      <div class="row text-center my-2" id="customSimRateDiv">
+        <div class="col-2 offset-4" id="customSimRateLabelDiv">
+
+        </div>
+        <div class="col-2" id="customSimRateInpDiv">
+        </div>
+      </div>
+
       <br />
 
       <div class="row text-center">
@@ -65,10 +73,12 @@
           <div class="btn-group dropend">
             <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown">Compression</button>
             <ul class="dropdown-menu">
-              <li class="dropdown-item" id="dropdown2x" onclick="dropdown2x()">2x</li>
-              <li class="dropdown-item" id="dropdown4x" onclick="dropdown4x()">4x</li>
-              <li class="dropdown-item" id="dropdown8x" onclick="dropdown8x()">8x</li>
-              <li class="dropdown-item" id="dropdown16x" onclick="dropdown16x()">16x</li>
+              <li class="dropdown-item" id="dropdown2x" onclick="setSimRate(2)">2x</li>
+              <li class="dropdown-item" id="dropdown4x" onclick="setSimRate(4)">4x</li>
+              <li class="dropdown-item" id="dropdown8x" onclick="setSimRate(8)">8x</li>
+              <li class="dropdown-item" id="dropdown16x" onclick="setSimRate(16)">16x</li>
+              <li class="dropdown-divider"></li>
+              <li class="dropdown-item" id="dropdownCustom" onclick="showCustomSimRate()">Custom</li>
             </ul>
           </div>
         </div>
@@ -76,7 +86,7 @@
       <div class="row text-center mt-3">
         <div class="col">
           <button type="button" id="realTimeBtn" class="btn btn-primary" onclick="calcRealTime()">Submit</button>
-          <h2 id="realTimeH2" class="h2 my-3"></h2>
+          <div id="realTimeResults" class="h3 my-3"></div>
         </div>
       </div>
     </form>
@@ -90,12 +100,9 @@
     <ul class="list-unstyled">
       <li>Bootstrap 5</li>
       <li><h1>🥵</h1></li>
-      <li><a href="https://github.com/TheBros35/xplanecalculator/tree/bootstrap-dev">Github</a></li>
+      <li><a href="https://github.com/TheBros35/xplanecalculator/">GitHub</a></li>
     </ul>
   </div>
- 
-
-  
 
 </body>
 
