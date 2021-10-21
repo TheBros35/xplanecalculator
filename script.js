@@ -2,6 +2,13 @@ function setSimRate(simRate){
     sessionStorage.setItem('compression', simRate);
 }
 
+function showCustomSimRate(){
+    const customSimRateLabel = `<label for="customSimRateInp" class="col-form-label">Sim Rate:</label>`;
+    const customSimRateInput = `<input id="customSimRateInp" maxlength="2" type="number" style="text-align: center" class="form-control"/>`;
+    document.getElementById('customSimRateLabelDiv').innerHTML = customSimRateLabel;
+    document.getElementById('customSimRateInpDiv').innerHTML = customSimRateInput;
+}
+
 function calcRealTime() {
     const hour = Number(document.getElementById('hourInp').value);
     const minutes = Number(document.getElementById('minInp').value);
