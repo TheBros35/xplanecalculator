@@ -23,7 +23,7 @@ function calcRealTime() {
         return;
     }
 
-    const compression = Number(sessionStorage.getItem('compression'));
+    const compression = parseFloat(sessionStorage.getItem('compression'));
 
     //converts hours to minutes, adds them together, then divides that by the compression factor
     const allMinutes = ((hour * 60) + minutes) / compression;
@@ -37,12 +37,11 @@ function calcRealTime() {
     if (convertedHours === 1) {
         hourOrHours = "hour";
     }
-    ;
     let minuteOrMinute = "minutes";
     if (convertedMinutes === 1) {
         minuteOrMinute = "minute";
     }
-    ;
+
 
     const final = `${convertedHours} ${hourOrHours} and ${convertedMinutes} ${minuteOrMinute}`;
     document.getElementById('realTimeResults').innerHTML = final;
