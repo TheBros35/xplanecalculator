@@ -42,9 +42,15 @@ function calcRealTime() {
         minuteOrMinute = "minute";
     }
 
+    if (convertedHours === 0){
+        const final = `${convertedMinutes} ${minuteOrMinute}`;
+        document.getElementById('realTimeResults').innerHTML = final;
+    }
+    else {
+        const final = `${convertedHours} ${hourOrHours} and ${convertedMinutes} ${minuteOrMinute}`;
+        document.getElementById('realTimeResults').innerHTML = final;
+    }
 
-    const final = `${convertedHours} ${hourOrHours} and ${convertedMinutes} ${minuteOrMinute}`;
-    document.getElementById('realTimeResults').innerHTML = final;
 }
 
 function showMinuteAlert() {
