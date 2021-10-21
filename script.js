@@ -1,21 +1,5 @@
-function dropdown2x() {
-    sessionStorage.setItem('compression', '2');
-}
-
-function dropdown4x() {
-    sessionStorage.setItem('compression', '4');
-}
-
-function dropdown8x() {
-    sessionStorage.setItem('compression', '8');
-}
-
-function dropdown16x() {
-    sessionStorage.setItem('compression', '16');
-}
-
-function dropdownCustom() {
-    document.getElementById('customRateInp').innerHTML = "yolo";
+function setSimRate(simRate){
+    sessionStorage.setItem('compression', simRate);
 }
 
 function calcRealTime() {
