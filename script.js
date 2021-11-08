@@ -1,11 +1,18 @@
+//runs the checkforNumbers function when submit button is clicked
 const submitBtn = document.getElementById('submitBtn');
-submitBtn.addEventListener('click', function () {
+submitBtn.addEventListener('click', () => {
    checkForNumbers();
 });
 
-function setSimRate(simRate){
-    sessionStorage.setItem('compression', simRate);
-}
+
+//adds a click event on each hardcoded dropdown to set sim rate in session storage
+const compressionRateList = document.querySelectorAll('.compRate');
+compressionRateList.forEach(element => {
+    element.addEventListener('click', () => {
+        sessionStorage.setItem('compression', element.dataset.rate);
+    })
+
+});
 
 function showCustomSimRate(){
     const customSimRateLabel = `<label for="customSimRateInp" class="col-form-label">Sim Rate:</label>`;
