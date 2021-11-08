@@ -1,3 +1,8 @@
+const submitBtn = document.getElementById('submitBtn');
+submitBtn.addEventListener('click', function () {
+   checkForNumbers();
+});
+
 function setSimRate(simRate){
     sessionStorage.setItem('compression', simRate);
 }
