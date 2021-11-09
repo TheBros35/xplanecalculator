@@ -24,6 +24,7 @@ function showCustomSimRate(){
     document.getElementById('customSimRateLabelDiv').innerHTML = customSimRateLabel;
     document.getElementById('customSimRateInpDiv').innerHTML = customSimRateInput;
 
+    //on each new input into the new field, grab current value and stick in sessionstorage
     document.getElementById('customSimRateInp').addEventListener('input', () => {
         let simRate = document.getElementById('customSimRateInp').value;
         sessionStorage.setItem('compression', simRate);
@@ -42,11 +43,11 @@ function checkForNumbers(){
         return;
     };
 
-    //run the function if both inputs are integers
-    if (Number.isInteger(hour) && Number.isInteger(minutes) && !Number.isNaN(compression)) {
+    //run the function if values are safe numbers
+    if (Number.isInteger(hour) && Number.isInteger(minutes) && !Number.isNaN(compression) && compression) {
         calcRealTime(hour, minutes, compression);
     } else {
-        alert("Error: Numbers in input fields are not integers");
+        alert("Error: One or more inputs do not have safe values.");
         return;
     }
 }
