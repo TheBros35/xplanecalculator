@@ -9,9 +9,12 @@ submitBtn.addEventListener('click', () => {
 const compressionRateList = document.querySelectorAll('.compRate');
 compressionRateList.forEach(element => {
     element.addEventListener('click', () => {
+        if (document.getElementById('customSimRateInp')){
+            document.getElementById('customSimRateLabelDiv').remove();
+            document.getElementById('customSimRateInpDiv').remove();
+        }
         sessionStorage.setItem('compression', element.dataset.rate);
     })
-
 });
 
 //displays the sim rate div if custom option is clicked
